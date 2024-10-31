@@ -183,6 +183,11 @@ h2 {
      padding: 1rem 2rem;
      background-color: #1B3A4B;
 }
+
+#navbarNav {
+    display: none;
+}
+
 /* Animated underline effect */
  .nav-link {
      position: relative;
@@ -660,12 +665,15 @@ body.light-mode #container3D {
     background-color: #1B3A4B;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Allow horizontal scrolling on small screens */
 }
 
 table {
     width: 100%;
+    max-width: 100%; /* Ensure the table doesn't exceed the container's width */
     border-collapse: collapse;
     text-align: left;
+    min-width: 600px; /* Minimum width to maintain usability */
 }
 
 caption {
@@ -698,7 +706,6 @@ tbody tr:nth-child(odd) {
 }
 
 tbody tr:hover {
-    
     background-color: #1e506b;
 }
 
@@ -711,8 +718,21 @@ td:nth-child(5) {
 @media (max-width: 768px) {
     th, td {
         padding: 8px 10px;
+        font-size: 12px; /* Adjust font size for smaller screens */
     }
 }
+
+
+
+.memory-icon {
+    position: relative; /* Keep it positioned absolutely */
+    left: 50%; /* Move to the center horizontally */
+    top: 50%; /* Move to the center vertically */
+    margin-top: 20px;
+    transform: translate(-50%, -50%); /* Offset by half of its size to center it */
+    font-size: 24px; /* Change the icon size here (adjust as needed) */
+}
+
 
 /* Smooth Transition for Background and Text */
  body, .navbar, body.light-mode, body.dark-mode {

@@ -107,6 +107,21 @@ h2 {
     background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
 }
 
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .invisible-scroll {
+        width: 75px; /* Adjusted width for mobile devices */
+    }
+
+    #leftScroll {
+        left: 0; /* Position the left scroll */
+    }
+
+    #rightScroll {
+        right: 0; /* Position the right scroll */
+    }
+}
+
 
 /* Navbar Links */
  .nav-link {
@@ -119,6 +134,11 @@ h2 {
      padding: 1rem 2rem;
      background-color: #333;
 }
+
+#navbarNav {
+    display: none;
+}
+
 /* Animated underline effect */
  .nav-link {
      position: relative;

@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <meta name="google" content="notranslate">
+
         <meta name="keywords" lang="en" content="sapho, cern, Scalable Architecture Processor for Hardware Optimization, ALICE, compiler" />
         <meta name="keywords" lang="pt" content="sapho, cern, Processador de Arquitetura Escalável para Otimização de Hardware, ALICE, compilador" />
         <meta name="keywords" lang="fr" content="sapho, cern, Processeur d'Architecture Évolutive pour l'Optimisation du Matériel, ALICE, compilateur" />
@@ -433,8 +434,8 @@ ASTNode *create_node(int type, ASTNode *left, ASTNode *right, ASTNode *back, AST
             <p data-i18n="alice_alice_documentation">Find detailed information and guides about the ALICE Assembly Logical Instruction for C Engine.</p>
             <div class="buttons mt-4"> <a data-i18n="alice_alice_documentation_button" href="#docs" href="#docs" class="btn btn-secondary">Read Documentation</a></div>
         </section>
-        <button onclick="scrollToTop()" id="backToTopBtn" title="Back to Top">
-        <i class="fas fa-arrow-up"></i>
+        <button aria-label="Back Top Button" id="backToTopBtn">
+            <span class="material-symbols-outlined">navigation</span>
         </button>
         <!-- Footer -->
         <footer class="footer text-center py-4">
@@ -488,6 +489,6 @@ ASTNode *create_node(int type, ASTNode *left, ASTNode *right, ASTNode *back, AST
         <!-- Custom JavaScript -->
         <script src="/nipscernwebtest/js/alice.js"></script>
         <script src="/nipscernwebtest/js/dark.js"></script>
-        
+
     </body>
 </html>
