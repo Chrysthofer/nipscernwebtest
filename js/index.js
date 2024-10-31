@@ -4,6 +4,33 @@ function translateSite(language) {
     // Logic for changing the language (fetching translations, etc.)
 }
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Try to get selectedLanguage and selectedFlag elements if they exist
+    const selectedLanguage = document.querySelector('.selected-language');
+    const selectedFlag = document.getElementById('selected-flag');
+
+    // Load the saved language from localStorage
+    const storedLanguage = JSON.parse(localStorage.getItem('selectedLanguage'));
+
+    // Only update selectedLanguage and selectedFlag if they exist on the current page
+    if (storedLanguage) {
+        if (selectedLanguage) {
+            selectedLanguage.textContent = storedLanguage.lang === 'en' ? '🇬🇧 English' :
+                storedLanguage.lang === 'pt' ? '🇧🇷 Português' :
+                storedLanguage.lang === 'no' ? '🇳🇴 Norge' : '🇫🇷 Français';
+        }
+        if (selectedFlag) {
+            selectedFlag.src = storedLanguage.logo;
+        }
+
+        // Load translations for the stored language and apply to the page
+        loadTranslations().then(translations => {
+            translatePage(translations, storedLanguage.lang);
+        });
+    }
+});
+
 // Function to load translations from the JSON file
 async function loadTranslations() {
     const response = await fetch('language.json');
