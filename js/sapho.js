@@ -38,30 +38,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('.collapsible-header').forEach(header => {
+    const headers = document.querySelectorAll('.collapsible-header');
+
+    headers.forEach(header => {
         header.addEventListener('click', function () {
             const body = this.nextElementSibling;
             const icon = this.querySelector('.material-icons');
 
             // Check if any other collapsible body is open and close it
-            document.querySelectorAll('.collapsible-body').forEach((bodyItem) => {
-                if (bodyItem !== body) {
-                    bodyItem.style.maxHeight = null; // Close other bodies
-                    bodyItem.previousElementSibling.classList.remove('active'); // Reset icon rotation for other headers
+            headers.forEach(otherHeader => {
+                const otherBody = otherHeader.nextElementSibling;
+                if (otherBody !== body) {
+                    otherBody.classList.remove('active'); // Collapse other bodies
+                    otherBody.style.maxHeight = null; // Reset max height for other bodies
+                    otherHeader.classList.remove('active'); // Reset icon rotation for other headers
                 }
             });
 
-            // Toggle max-height and rotate icon for the clicked item
-            if (body.style.maxHeight) {
-                body.style.maxHeight = null; // Collapse clicked body
+            // Toggle the clicked item
+            if (body.classList.contains('active')) {
+                body.classList.remove('active'); // Collapse clicked body
                 this.classList.remove('active'); // Reset icon rotation for clicked header
             } else {
-                body.style.maxHeight = body.scrollHeight + 'px'; // Expand clicked body
+                body.classList.add('active'); // Expand clicked body
                 this.classList.add('active'); // Rotate icon
             }
+
+            // Use requestAnimationFrame for smoother animations
+            requestAnimationFrame(() => {
+                if (body.classList.contains('active')) {
+                    body.style.maxHeight = body.scrollHeight + 'px'; // Expand
+                } else {
+                    body.style.maxHeight = null; // Collapse
+                }
+            });
         });
     });
 });
+
 
 
 
