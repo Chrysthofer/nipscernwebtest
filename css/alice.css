@@ -243,6 +243,7 @@ h1, .fa-atom {
      align-items: center;
     /* Center items */
      position: relative;
+     width: 100%; /* Full width for the timeline container */
     /* Allow positioning of children */
 }
  .timeline-content {
@@ -261,7 +262,6 @@ h1, .fa-atom {
 }
  .timeline-component.timeline-component-tiny {
      max-width: 300px;
-     !important 
     /* Limit width on larger screens */
 }
  .timeline-component {
@@ -583,7 +583,7 @@ h1, .fa-atom {
         /* Adjust padding */
     }
      .timeline-component {
-         width: 20%;
+         width: 80%;
         /* Make components slightly wider on small screens */
     }
 }
