@@ -1,3 +1,37 @@
+document.addEventListener("DOMContentLoaded", function () { 
+    // Get the navbar toggler button and the collapsible menu
+    const navbarToggler = document.getElementById('navbarToggler');
+    const navbarMenu = document.getElementById('navbarNav');
+    
+    let menuOpen = false; // Track the menu state
+
+    // Toggle the menu open/close when the button is clicked
+    navbarToggler.addEventListener('click', function () {
+        if (menuOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+        menuOpen = !menuOpen; // Toggle the state
+    });
+
+    function openMenu() {
+        navbarMenu.style.display = 'block'; // Ensure menu is visible
+        setTimeout(() => {
+            navbarMenu.style.height = navbarMenu.scrollHeight + 'px'; // Expand the menu smoothly
+        }, 10); // Small delay for smooth animation
+    }
+
+    function closeMenu() {
+        navbarMenu.style.height = '0'; // Collapse the menu smoothly
+        navbarMenu.addEventListener('transitionend', function () {
+            if (!menuOpen) {
+                navbarMenu.style.display = 'none'; // Hide the menu completely after transition ends
+            }
+        }, { once: true });
+    }
+});
+
 
 document.getElementById("toggle-diagram").addEventListener("click", function() {
     var diagram = document.getElementById("diagram-container");
