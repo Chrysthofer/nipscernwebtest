@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Cardo|Work+Sans&display=swap');
+
+:root {
+	--coral: #FF7A63;
+	--jade:  #275244;
+}
+body {
+	background: var(--jade);
+	margin: 0;
+	padding: 20px;
+	color: var(--coral);
+	font-size: 14px;
+	line-height: 1.25;
+}
+
+
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-gap: 1em 3em;
+	
+}
+
+/* TYPE */
+.sans {
+	font-family: 'Work Sans', Helvetica, Arial, sans-serif;
+}
+
+.serif {
+	font-family: 'Cardo', Garamond, 'Times New Roman', serif;
+}
+
+.centre {
+	text-align: center;
+}
+
+.title {
+	font-size: 10em;
+	line-height: 90%;
+}
+
+.summary {
+	font-size: 1.5em;
+	line-height: 1.35;
+}
+
+.accent {
+	font-size: 2.5em;
+	line-height: 120%;
+	margin: 20px 0;
+}
+
+.caps {
+	text-transform: uppercase;
+}
+
+.justify {
+	text-align: justify;
+}
+
+.fine-print {
+	font-size: 8px;
+}
+/*LINES*/
+
+.line-btm {
+	border-bottom: 1px solid var(--coral);
+	width: 100%;
+	padding: 10px 0;
+}
+
+.line-left {
+	border-left: 1px solid var(--coral);
+	padding: 0 10px;
+}
+
+/* IMAGES */
+.placeholder {
+	border: 1px solid var(--coral);
+	padding: 10px;
+	text-align: center;
+	min-height: 300px;
+}
+
+/* GRID */
+.span-all {
+	grid-column: span 12;
+}
+
+.span-third {
+	grid-column: span 4;
+}
+
+.span-fourth {
+	grid-column: span 3;
+}
+
+.span-half {
+	grid-column: span 6;
+}
+
+.span-twothirds {
+	grid-column: span 8;
+}
+
+.span-threefourths {
+	grid-column: span 9;
+}
+
+.material-symbols-outlined {
+     font-size: 6.5rem;
+}
+
+a {
+    color: inherit; /* Makes link color inherit from the parent element */
+    text-decoration: none; /* Removes underline from links */
+}
+
+/* Optional: You can add a hover effect to links if desired */
+a:hover {
+    text-decoration: underline; /* Adds underline on hover (optional) */
+    color: var(--coral); /* Changes color on hover (optional) */
+}
+
+img {
+    max-width: 80%;   /* Ensures the image does not exceed the width of its parent */
+    height: auto;      /* Maintains the aspect ratio of the image */
+    display: block;    /* Prevents bottom whitespace for inline images */
+}
+
+
+ .video-loop {
+     width: 90%;
+    /* Adjust the width as needed */
+     border-radius: 15px;
+    /* Rounded corners */
+     border: 4px solid var(--coral);;
+    /* Crimson red border */
+     display: block;
+     margin: 20px auto;
+    /* Center the video */
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Optional shadow for modern look */
+}
+
+/* Scrollbar styles for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--jade); /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--coral); /* Background of the scrollbar handle */
+    border-radius: 10px; /* Optional: rounded corners for the handle */
+}
+
+/* Hover effect for the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+    background: #FF7F50; /* Light coral color on hover */
+}
+
+/* Scrollbar styles for Firefox */
+* {
+    scrollbar-width: thin; /* Set the scrollbar width to thin */
+    scrollbar-color: var(--coral) var(--jade); /* Handle color and track color */
+}
+
+/* Hover effect for Firefox (no direct hover styling for scrollbar, consider alternative if necessary) */
