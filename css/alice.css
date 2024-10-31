@@ -32,6 +32,10 @@ body {
    /* Add some padding if needed */
 }
 
+#navbarNav {
+    display: none;
+}
+
 /* Pseudo-element for the underline */
 .nav-link::after {
     content: '';
