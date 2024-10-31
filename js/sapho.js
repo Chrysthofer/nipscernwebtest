@@ -32,27 +32,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-document.querySelectorAll('.collapsible-header').forEach(header => {
-    header.addEventListener('click', function() {
-        const body = this.nextElementSibling;
-        const icon = this.querySelector('.material-icons');
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.collapsible-header').forEach(header => {
+        header.addEventListener('click', function () {
+            const body = this.nextElementSibling;
+            const icon = this.querySelector('.material-icons');
 
-        // Toggle max-height and rotate icon
-        if (body.style.maxHeight) {
-            body.style.maxHeight = null; // Close body
-            this.classList.remove('active'); // Reset icon rotation
-        } else {
-            document.querySelectorAll('.collapsible-body').forEach(bodyItem => {
-                bodyItem.style.maxHeight = null; // Close all other bodies
+            // Check if any other collapsible body is open and close it
+            document.querySelectorAll('.collapsible-body').forEach((bodyItem) => {
+                if (bodyItem !== body) {
+                    bodyItem.style.maxHeight = null; // Close other bodies
+                    bodyItem.previousElementSibling.classList.remove('active'); // Reset icon rotation for other headers
+                }
             });
-            document.querySelectorAll('.collapsible-header').forEach(headerItem => {
-                headerItem.classList.remove('active'); // Reset all other icons
-            });
-            body.style.maxHeight = body.scrollHeight + "px"; // Open clicked body
-            this.classList.add('active'); // Rotate icon
-        }
+
+            // Toggle max-height and rotate icon for the clicked item
+            if (body.style.maxHeight) {
+                body.style.maxHeight = null; // Collapse clicked body
+                this.classList.remove('active'); // Reset icon rotation for clicked header
+            } else {
+                body.style.maxHeight = body.scrollHeight + 'px'; // Expand clicked body
+                this.classList.add('active'); // Rotate icon
+            }
+        });
     });
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function () {
