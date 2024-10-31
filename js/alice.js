@@ -3,10 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const navbarToggler = document.getElementById('navbarToggler');
     const navbarMenu = document.getElementById('navbarNav');
     
-    // Initialize the menu to be closed
-    navbarMenu.style.display = 'none'; // Hide the menu initially
-    navbarMenu.style.height = '0'; // Set the height to 0
-
     let menuOpen = false; // Track the menu state
 
     // Toggle the menu open/close when the button is clicked
@@ -35,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, { once: true });
     }
 });
-
 
 
 document.getElementById("toggle-diagram").addEventListener("click", function() {
