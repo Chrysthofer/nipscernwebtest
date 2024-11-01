@@ -535,8 +535,6 @@ body.light-mode, body.dark-mode, .navbar {
 body.light-mode pre {
     background-color: black;
    /* Light mode pre background */
-    color: black;
-   /* Light mode pre text color */
 }
 body.light-mode .feature-item {
     background: #A1C398;
