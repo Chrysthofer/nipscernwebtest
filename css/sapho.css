@@ -15,9 +15,7 @@
     list-style: none;
     padding: 0;
     margin: 20px 0;
-    border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     overflow: hidden;
 }
@@ -41,7 +39,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .collapsible-header:hover {
@@ -55,16 +53,15 @@
 
 /* Body Styles */
 .collapsible-body {
-    max-height: 0;
+    height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
+    transition: height 0.4s ease;
     padding: 0 15px;
     background-color: #FFF8E7;
     color: #0A0F36;
 }
 
-.collapsible-body span {
-    display: block;
+.collapsible-body p {
     padding: 15px 0;
 }
 
@@ -73,9 +70,6 @@
     background-color: #FFC107;
 }
 
-.collapsible-header.active .material-icons {
-    transform: rotate(180deg);
-}
 
 
 a {

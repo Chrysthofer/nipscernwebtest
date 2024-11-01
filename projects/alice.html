@@ -451,8 +451,8 @@ ASTNode *create_node(int type, ASTNode *left, ASTNode *right, ASTNode *back, AST
                 </a>
             </div>
             <p>NIPSCERN Lab.</p>
-            <p data-i18n="alice_alice_license">>
-                Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>.
+            <p>
+                <a data-i18n="alice_alice_license">Licensed under</a> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>.
             </p>
         </footer>
         
@@ -474,21 +474,9 @@ ASTNode *create_node(int type, ASTNode *left, ASTNode *right, ASTNode *back, AST
             AOS.init(); // Initialize AOS
         </script>
 
-        <!-- VLibras Accessibility Plugin -->
-        <div vw class="enabled">
-            <div vw-access-button class="active"></div>
-            <div vw-plugin-wrapper>
-                <div class="vw-plugin-top-wrapper"></div>
-            </div>
-        </div>
-        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-        <script>
-            new window.VLibras.Widget('https://vlibras.gov.br/app');
-        </script>
-
         <!-- Custom JavaScript -->
         <script src="/nipscernwebtest/js/alice.js"></script>
         <script src="/nipscernwebtest/js/dark.js"></script>
-
+        <script src="/nipscernwebtest/js/top.js"></script>
     </body>
 </html>

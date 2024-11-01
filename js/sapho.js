@@ -40,39 +40,31 @@ document.addEventListener("DOMContentLoaded", function() {
         header.addEventListener('click', function () {
             const body = this.nextElementSibling;
             const icon = this.querySelector('.material-icons');
-
-            // Check if any other collapsible body is open and close it
+            
             headers.forEach(otherHeader => {
                 const otherBody = otherHeader.nextElementSibling;
+                const otherIcon = otherHeader.querySelector('.material-icons');
+
                 if (otherBody !== body) {
-                    otherBody.classList.remove('active'); // Collapse other bodies
-                    otherBody.style.maxHeight = null; // Reset max height for other bodies
-                    otherHeader.classList.remove('active'); // Reset icon rotation for other headers
+                    otherBody.style.height = '0'; // Collapse other bodies
+                    otherHeader.classList.remove('active');
+                    otherIcon.style.transform = 'rotate(0deg)';
                 }
             });
 
             // Toggle the clicked item
-            if (body.classList.contains('active')) {
-                body.classList.remove('active'); // Collapse clicked body
-                this.classList.remove('active'); // Reset icon rotation for clicked header
+            if (body.style.height === '0px' || body.style.height === '') {
+                body.style.height = body.scrollHeight + 'px'; // Expand
+                this.classList.add('active');
+                icon.style.transform = 'rotate(180deg)';
             } else {
-                body.classList.add('active'); // Expand clicked body
-                this.classList.add('active'); // Rotate icon
+                body.style.height = '0'; // Collapse
+                this.classList.remove('active');
+                icon.style.transform = 'rotate(0deg)';
             }
-
-            // Use requestAnimationFrame for smoother animations
-            requestAnimationFrame(() => {
-                if (body.classList.contains('active')) {
-                    body.style.maxHeight = body.scrollHeight + 'px'; // Expand
-                } else {
-                    body.style.maxHeight = null; // Collapse
-                }
-            });
         });
     });
 });
-
-
 
 
 document.addEventListener('DOMContentLoaded', function () {
