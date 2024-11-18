@@ -692,7 +692,6 @@
         "sapho_prefetch_text": "Enquanto o processador executa a instrução atual, ele também busca a próxima instrução da memória do programa (ROM) (1º estágio do pipeline). Ele separa o opcode do operando, que são concatenados na ROM, e controla o decodificador de instruções e o contador do programa.",
         "sapho_decoder_text": "Decodificador de instruções",
         "sapho_decoder": "O decodificador de instruções recebe o opcode, interpreta-o e envia os sinais de controle corretos, como aqueles para a operação ALU, habilitando a saída de dados, atribuindo valores no Register File quando matrizes são usadas, habilitando a gravação de dados na memória e enviando sinais PUSH e POP para o Stack Pointer, entre outros.",
-        "sapho_decoder": "The instruction decoder receives the opcode, interprets it, and sends the correct control signals, such as those for the ALU operation, enabling data output, assigning values in the Register File when arrays are used, enabling data writing to memory, and sending PUSH and POP signals to the Stack Pointer, among others.",
         "sapho_register_text": "Arquivo de registro",
         "sapho_register": "O Register File é criado sempre que matrizes são usadas no programa do usuário. Sua função é indexar corretamente os elementos da matriz, deslocando a posição de memória do primeiro elemento para acessar a posição do elemento desejado.",
         "sapho_alu": "Unidade Lógica Aritmética (ULA)",
